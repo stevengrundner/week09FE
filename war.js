@@ -1,3 +1,4 @@
+// These instructions i used from my back end course where we made the game of war as well
 // Create the following classes and methods
 // -Card
 // -Deck
@@ -8,7 +9,7 @@
 // -Game
 //    -play
 
-//  In the card class below i'm creating the card with the several constructors. Suit, name, and value.
+//  In the card class below i'm creating the card with the several constructors. Suit, name, and value. This concept was used from the class video
 class Card {
   constructor(suit, name, value) {
     this.name = name;
@@ -17,7 +18,7 @@ class Card {
   }
 }
 
-//  In the deck class below i'm describing the names of the cards in array's
+//  In the deck class below i'm describing the names of the cards in array's. 
 class Deck {
   constructor() {
     this.cards = [];
@@ -40,7 +41,7 @@ class Deck {
     ];
   }
 
-  // The for loop is looping through all of the array's and actually creating the deck below
+  // The for loop is looping through all of the array's and actually creating the deck below. This concept was used from the class video.
   createDeck() {
     for (let i = 0; i < this.suits.length; i++) {
       for (let n = 0; n < this.names.length; n++) {
@@ -48,7 +49,7 @@ class Deck {
       }
     }
   }
-  //  I borrorwed this code from https://stackoverflow.com in order to shuffle the deck
+  //  This was borrorwed this code from https://stackoverflow.com in order to shuffle the deck.
   shuffleDeck() {
     let shuffleDeck = [];
     for (let i = 0; i < 52; i++) {
@@ -59,7 +60,7 @@ class Deck {
     return shuffleDeck;
   }
 
-  // the method to deal the deck is below in which each player gets 26 cards
+  // The method to deal the deck is below in which each player gets 26 cards. This was used the from the class video.
   dealDeck(players, shuffledCards) {
     let dealingCards1 = shuffledCards.splice(0, 26);
     players[0].hands.push(...dealingCards1);
@@ -77,7 +78,7 @@ class Players {
   }
 }
 
-// Now that i've made the deck of cards, shuffled them and created the players, the game is going to begin
+// Now we have the deck of cards, shuffled them and created the players, the game is going to begin
 class Game {
   constructor() {
     this.players = [];
